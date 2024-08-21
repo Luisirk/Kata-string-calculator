@@ -25,4 +25,8 @@ describe("String Calculator", ()=>{
     it('returns 1 when param is 1', ()=>{
         expect(add('1')).toBe('1')
     })
+    it('return 2 when param is 1,1', ()=>{
+
+        expect(add('1,1')).toBe('2')
+    })
 })
