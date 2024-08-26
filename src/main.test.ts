@@ -44,4 +44,7 @@ describe("String Calculator", ()=> {
     it('returns the sum of two numbers of a expression', () => {
         expect(add('4,2')).toBe('6')
     })
+    it('returns the sum of two or more numbers of a expression', () => {
+        expect(add('4,2,4,8')).toBe('18')
+    })
 })
