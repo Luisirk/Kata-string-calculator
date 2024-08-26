@@ -13,7 +13,13 @@ function add(expression:string):string {
     if(expression === '') {
         return '0'
     }
-    return expression;
+
+    let number = expression.split(',');
+    let sum = number.reduce((total, element) => {
+        return total + parseFloat(element);
+    },0);
+    return sum.toString();
+
 }
 
 
