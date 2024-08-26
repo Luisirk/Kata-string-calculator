@@ -32,7 +32,10 @@ describe("String Calculator", ()=> {
     it('returns the number when expression is a number', () => {
         expect(add('3')).toBe('3')
     })
-
-
+    it('returns the sum of two numbers of a expression', () => {
+        expect(add('1,1')).toBe('2')
+    })
+    it('returns the sum of two numbers of a expression', () => {
+        expect(add('4,2')).toBe('6')
+    })
 })
-
