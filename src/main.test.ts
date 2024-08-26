@@ -9,19 +9,10 @@ describe("Default test", () => {
 
 
 function add(expression:string):string {
-    let i = 0;
-    const number = []
-
-
-    while (i < number.length) {
-        let separatorPosition = expression.indexOf(',', i)
-        if (separatorPosition === -1) {
-            separatorPosition = number.length
-        }
-        const firstNumber = expression.substring(i, separatorPosition)
-        number.push(firstNumber);
-        i = separatorPosition + 1;
+    if (expression === ''){
+        return '0';
     }
+
 
 
 
