@@ -13,7 +13,7 @@ function add(expression:string):string {
     if(expression === '') {
         return '0'
     }
-    return expression;
+    //return expression;
 }
 
 
@@ -25,7 +25,13 @@ describe("String Calculator", ()=> {
     it('returns zero when expression is empty', () => {
         expect(add('')).toBe('0')
     })
-//'1' =>1
+    //'1' =>1
+    it('returns the number when expression is a number', () => {
+        expect(add('1')).toBe('1')
+    })
+    it('returns the number when expression is a number', () => {
+        expect(add('3')).toBe('3')
+    })
 
 
 })
