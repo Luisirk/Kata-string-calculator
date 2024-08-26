@@ -7,35 +7,49 @@ describe("Default test", () => {
   });
 });
 
-describe("String Calculator", ()=>{
-    function add(number: string): string {
-        if(number ===''){
-            return '0';
+
+function add(expression:string):string {
+    let i = 0;
+    const number = []
+
+
+    while (i < number.length) {
+        let separatorPosition = expression.indexOf(',', i)
+        if (separatorPosition === -1) {
+            separatorPosition = number.length
         }
-        else{
-            if (number==='1'){
-                return '1';
-            }
-            if (number==='1,1'){
-                return '2';
-            }
-
-
-        }
-
-
-
+        const firstNumber = expression.substring(i, separatorPosition)
+        number.push(firstNumber);
+        i = separatorPosition + 1;
     }
-    // ''  -> 0
-    it ('returns zero when param is empty', ()=>{
-        expect(add('')).toBe('0')
-    });
-    // '1' => 1
-    it('returns 1 when param is 1', ()=>{
-        expect(add('1')).toBe('1')
-    })
-    it('return 2 when param is 1,1', ()=>{
 
-        expect(add('1,1')).toBe('2')
+
+
+    return expression;
+}
+
+
+
+
+
+describe("String Calculator", ()=> {
+    // ''-> return 0
+    it ('returns zero when expression is empty', ()=> {
+        expect(add('')).toBe('0')}
+    )})
+//'1' =>1
+
+    it('returns the number when has only one number',()=>{
+        expect(add('1')).toBe('1')
+        expect(add('10')).toBe('10')
+        expect(add('100')).toBe('100')
     })
+//'1,1 => 2
+
+it('returns the number when has only one number',()=>{
+    expect(add('1,1')).toBe('2')
+    expect(add('1,10')).toBe('11')
 })
+
+
+
