@@ -12,6 +12,7 @@ describe("String Calculator", () => {
 
   it("returns number when expression is a single number", () => {
     expect(add("1")).toBe('1');
+    expect(add("2")).toBe('2');
   });
 
 
