@@ -23,6 +23,9 @@ describe("String Calculator", () => {
     expect(add("10,3")).toBe('13');
     expect(add("10,10")).toBe('20');
   });
+  it('returns sum of multiple numbers when expression is multiple numbers separated by comma', () => {
+    expect(add("1,2,3")).toBe('6');
+  });
 
 
 });
