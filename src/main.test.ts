@@ -1,8 +1,15 @@
-import { Main } from "./main";
+import {expect} from "vitest";
+import {add} from "./main";
 
-describe("Default test", () => {
-  it("should work", () => {
-    const main = new Main("Hello world");
-    expect(main.getParam()).toBe("Hello world");
+
+// Limitations of the current implementation
+// no use split, reduce
+// apply simple solution as possible
+describe("String Calculator", () => {
+  it("returns zero when expression is empty", () => {
+    expect(add("")).toBe('0');
   });
+
+
 });
+
