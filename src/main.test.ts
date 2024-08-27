@@ -10,6 +10,10 @@ describe("String Calculator", () => {
     expect(add("")).toBe('0');
   });
 
+  it("returns number when expression is a single number", () => {
+    expect(add("1")).toBe('1');
+  });
+
 
 });
 
