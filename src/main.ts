@@ -2,5 +2,8 @@
 
 
 export function add(expression: string): string {
-  return '0';
+  if (expression === '') {
+    return '0';
+  }
+  return '1'
 }
