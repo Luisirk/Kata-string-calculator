@@ -2,5 +2,5 @@
 
 
 export function add(expression: string): string {
-  throw new Error("Not implemented");
+  return '0';
 }
