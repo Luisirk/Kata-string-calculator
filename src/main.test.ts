@@ -21,6 +21,7 @@ describe("String Calculator", () => {
   });
   it('returns sum of two numbers when expression is two numbers separated by comma bigger than 2 digits', () => {
     expect(add("10,3")).toBe('13');
+    expect(add("10,10")).toBe('20');
   });
 
 
