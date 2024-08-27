@@ -17,7 +17,10 @@ describe("String Calculator", () => {
 
   it("returns sum of two numbers when expression is two numbers separated by comma", () => {
     expect(add("1,2")).toBe('3');
-    // expect(add("2,3")).toBe('5');
+    expect(add("2,3")).toBe('5');
+  });
+  it('returns sum of two numbers when expression is two numbers separated by comma bigger than 2 digits', () => {
+    expect(add("10,3")).toBe('13');
   });
 
 
