@@ -25,6 +25,7 @@ describe("String Calculator", () => {
   });
   it('returns sum of multiple numbers when expression is multiple numbers separated by comma', () => {
     expect(add("1,2,3")).toBe('6');
+    expect(add("1,2,3,1")).toBe('7');
   });
 
 
