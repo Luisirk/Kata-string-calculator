@@ -1,4 +1,3 @@
-
 function splitNextNumberFromExpression(expression: string): [number, string] {
   const firstCommaIndex = expression.indexOf(',', 0);
   if (firstCommaIndex !== -1) {
@@ -9,19 +8,20 @@ function splitNextNumberFromExpression(expression: string): [number, string] {
   return [parseInt(expression), ''];
 }
 
-export function add(expression: string): string {
-  if (expression === '') {
-    return '0';
+function sumNumbersSplitByComma(expression: string) {
+  let sumOfNumbers = 0;
+  let rest = expression;
+  while (rest !== '') {
+    const result = splitNextNumberFromExpression(rest);
+    sumOfNumbers += result[0];
+    rest = result[1];
   }
-  if(expression.includes(',')) {
-    let sumOfNumbers = 0;
-    let rest = expression;
-    while (rest !== '') {
-      const result = splitNextNumberFromExpression(rest);
-      sumOfNumbers += result[0];
-      rest = result[1];
-    }
-    return sumOfNumbers.toString();
-  }
-  return expression;
+  return sumOfNumbers.toString();
 }
+
+export function add(expression: string): string {
+  if (expression === '') return '0';
+  if (!expression.includes(',')) return expression;
+  return sumNumbersSplitByComma(expression);
+}
+
