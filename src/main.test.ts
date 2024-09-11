@@ -28,7 +28,12 @@ describe("String Calculator", () => {
     expect(add("1,2,3,1")).toBe('7');
     expect(add("1,2,3,1,1")).toBe('8');
   });
-
-
+  // it('Do not allow the input to end in a separator', () => {
+  //   expect((add(1,3,2,)).toBe('1,3,2');
+  //
+  // });
+  it('returns sum of number when it has a custom separator', () => {
+    expect(add("//;\n1;2")).toBe('3');
 });
+})
 
