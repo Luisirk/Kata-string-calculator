@@ -29,8 +29,7 @@ export function add(expression: string): string {
 
   if (evaluateExpression.startsWith('//')) {
     const jumpPosition = evaluateExpression.indexOf('\n')
-   // const customSeparator = evaluateExpression.substring('//'.length, jumpPosition);
-    const customSeparator = ';'
+    const customSeparator = evaluateExpression.substring('//'.length, jumpPosition);
     const listOfNumbers = evaluateExpression.substring(jumpPosition + 1);
     evaluateExpression = listOfNumbers.replace(customSeparator,',')
 
