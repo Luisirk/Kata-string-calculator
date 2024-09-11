@@ -26,18 +26,11 @@ function replaceCustomSeparatorByComma(expression: string):string {
   const listOfNumbers = expression.substring(jumpPosition + 1);
   return listOfNumbers.replace(customSeparator,',')
 }
-//Lo primero que vamos a hacer es separar el separador personalizado de los numeros
-//Reemplazar en los numeros el separar personalizado por la coma
-//(Para evitar reciclar el resto del codigo)
 export function add(expression: string): string {
   if (expression === '') return '0';
-  let evaluateExpression = expression;
-
-
-  if (evaluateExpression.startsWith('//')) {
-    evaluateExpression= replaceCustomSeparatorByComma(evaluateExpression);``
-
-  }
+  const evaluateExpression = expression.startsWith('//')
+      ? replaceCustomSeparatorByComma(expression)
+      : expression
   if (!evaluateExpression.includes(',')) return evaluateExpression;
   return sumNumbersSplitByComma(evaluateExpression);
 }
