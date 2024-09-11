@@ -20,6 +20,12 @@ function sumNumbersSplitByComma(expression: string) {
   }
   return sumOfNumbers.toString();
 }
+function replaceCustomSeparatorByComma(expression: string):string {
+  const jumpPosition = expression.indexOf('\n')
+  const customSeparator = expression.substring('//'.length, jumpPosition);
+  const listOfNumbers = expression.substring(jumpPosition + 1);
+  return listOfNumbers.replace(customSeparator,',')
+}
 //Lo primero que vamos a hacer es separar el separador personalizado de los numeros
 //Reemplazar en los numeros el separar personalizado por la coma
 //(Para evitar reciclar el resto del codigo)
@@ -27,11 +33,9 @@ export function add(expression: string): string {
   if (expression === '') return '0';
   let evaluateExpression = expression;
 
+
   if (evaluateExpression.startsWith('//')) {
-    const jumpPosition = evaluateExpression.indexOf('\n')
-    const customSeparator = evaluateExpression.substring('//'.length, jumpPosition);
-    const listOfNumbers = evaluateExpression.substring(jumpPosition + 1);
-    evaluateExpression = listOfNumbers.replace(customSeparator,',')
+    evaluateExpression= replaceCustomSeparatorByComma(evaluateExpression);``
 
   }
   if (!evaluateExpression.includes(',')) return evaluateExpression;
