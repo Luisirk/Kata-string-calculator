@@ -34,6 +34,8 @@ describe("String Calculator", () => {
   // });
   it('returns sum of number when it has a custom separator', () => {
     expect(add("//;\n1;2")).toBe('3');
+    expect(add("//a\n1a2")).toBe('3');
+
 });
 })
 
